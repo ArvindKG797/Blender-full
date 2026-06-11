@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Tells Tailwind v4 to look for the .dark class on the <html> tag for dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brandBlue-light: #f8fafc;
+  --color-brandBlue: #0284c7;
+  --color-brandBlue-dark: #0f172a;
+  --color-brandBlue-darker: #020617;
+  --color-brandOrange: #f97316;
+  --color-brandOrange-hover: #ea580c;
+}
+
+
+/*SCROLLBAR STYLES*/
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #ffffff; /* Light Mode: thumb color | track color */
+}
+html.dark {
+  scrollbar-color: #334155 #0f172a; /* Dark Mode: slate-700 thumb | brandBlue-dark track */
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Light Mode*/
+::-webkit-scrollbar-track {
+  background: #f1f5f9; 
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark Mode*/
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a; 
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border: 2px solid #0f172a; 
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
